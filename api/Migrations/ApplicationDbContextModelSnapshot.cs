@@ -55,9 +55,6 @@ namespace api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPedido"));
 
-                    b.Property<DateTime>("FechaPedido")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("IdCliente")
                         .HasColumnType("int");
 
@@ -71,6 +68,61 @@ namespace api.Migrations
                     b.ToTable("Pedidos");
                 });
 
+            modelBuilder.Entity("api.Models.PedidoDetalle", b =>
+                {
+                    b.Property<int>("IdPedidoDetalle")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPedidoDetalle"));
+
+                    b.Property<DateTime>("FechaPedido")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdPedido")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Plato")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PrecioPlato")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("IdPedidoDetalle");
+
+                    b.HasIndex("IdPedido");
+
+                    b.ToTable("PedidosDetalle");
+                });
+
+            modelBuilder.Entity("api.Models.Plato", b =>
+                {
+                    b.Property<int>("IdPlato")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPlato"));
+
+                    b.Property<decimal>("Costo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Imagen")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("NombrePlato")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdPlato");
+
+                    b.ToTable("Platos");
+                });
+
             modelBuilder.Entity("api.Models.Pedido", b =>
                 {
                     b.HasOne("api.Models.Cliente", "Cliente")
@@ -82,9 +134,25 @@ namespace api.Migrations
                     b.Navigation("Cliente");
                 });
 
+            modelBuilder.Entity("api.Models.PedidoDetalle", b =>
+                {
+                    b.HasOne("api.Models.Pedido", "Pedido")
+                        .WithMany("Detalle")
+                        .HasForeignKey("IdPedido")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pedido");
+                });
+
             modelBuilder.Entity("api.Models.Cliente", b =>
                 {
                     b.Navigation("Pedidos");
+                });
+
+            modelBuilder.Entity("api.Models.Pedido", b =>
+                {
+                    b.Navigation("Detalle");
                 });
 #pragma warning restore 612, 618
         }

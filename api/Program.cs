@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using api.Data;
 using api.Interfaces;
 using api.Repositories;
@@ -15,9 +16,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
 });
 builder.Services.AddScoped<IClienteRepository,ClienteRepository>();
 builder.Services.AddScoped<IPedidoRepository,PedidoRepository>();
-builder.Services.AddControllers().AddNewtonsoftJson(options =>
+builder.Services.AddControllers().AddJsonOptions(options =>
 {
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
 

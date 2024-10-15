@@ -14,7 +14,7 @@ namespace api.Models
         public string NombreCliente {get; set;} = string.Empty;
         public string Telefono {get; set;} = string.Empty;
         public string Correo {get; set;} = string.Empty;
-        public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
+        public List<Pedido>? Pedidos { get; set; } = new List<Pedido>();
 
     }
 }

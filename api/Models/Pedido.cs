@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace api.Models
@@ -14,9 +15,12 @@ namespace api.Models
         
         [Column(TypeName = "decimal(18,2)")]
         public decimal PrecioPedido {get; set;}
-        public DateTime FechaPedido {get; set;}
+        public List<PedidoDetalle>? Detalle {get; set;}
+
+        
         public int IdCliente {get; set;}
         [ForeignKey("IdCliente")]
+        [JsonIgnore]
         public virtual Cliente? Cliente {get; set;}
     }
 }

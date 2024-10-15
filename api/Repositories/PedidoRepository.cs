@@ -31,11 +31,11 @@ namespace api.Repositories
 
         public async Task<List<Pedido>> GetPedidosAsync()
         {
-            return await _context.Pedidos.ToListAsync();
+            return await _context.Pedidos.Include(p => p.Detalle).ToListAsync();
         }
 
         public async Task<List<Pedido>> GetPedidosClienteAsync(int id) {
-            return await _context.Pedidos.Where(x => x.IdCliente == id).ToListAsync();
+            return await _context.Pedidos.Where(x => x.IdCliente == id).Include(p => p.Detalle).ToListAsync();
         }
     }
 }

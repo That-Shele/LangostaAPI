@@ -45,12 +45,12 @@ namespace api.Repositories
 
         public async Task<Cliente?> GetClienteAsync(int id)
         {
-            return await _context.Clientes.Include(p => p.Pedidos).FirstOrDefaultAsync(i => i.IdCliente == id);
+            return await _context.Clientes.Include(p => p.Pedidos).ThenInclude(d => d.Detalle).FirstOrDefaultAsync(i => i.IdCliente == id);
         }
 
         public async Task<List<Cliente>> GetClientesAsync()
         {
-            return await _context.Clientes.Include(p => p.Pedidos).ToListAsync();
+            return await _context.Clientes.Include(p => p.Pedidos).ThenInclude(d => d.Detalle).ToListAsync();
         }
 
         public async Task<Cliente?> UpdateClienteAsync(int id, UpdateClienteRequestDto updateDto)
