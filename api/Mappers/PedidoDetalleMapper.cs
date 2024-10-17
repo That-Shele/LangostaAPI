@@ -9,13 +9,13 @@ namespace api.Mappers
 {
     public static class PedidoDetalleMapper
     {
-        public static PedidoDetalleDto ToPedidoDetalleDto(this PedidoDetalle detalleModel) {
+        public static PedidoDetalleDto ToPedidoDetalleDto(this PedidoDetalle detalleModel, int id) {
             return new PedidoDetalleDto {
                 IdPedidoDetalle = detalleModel.IdPedidoDetalle,
                 Plato = detalleModel.Plato,
                 PrecioPlato = detalleModel.PrecioPlato,
                 FechaPedido = detalleModel.FechaPedido,
-                IdPedido = detalleModel.IdPedido
+                IdPedido = id
             };
         }
     }

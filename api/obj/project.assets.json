@@ -4651,11 +4651,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj",
+      "projectUniqueName": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj",
+      "projectPath": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj",
       "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-      "outputPath": "z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\obj\\",
+      "outputPath": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "Z:\\Shared\\NuGetPackages"

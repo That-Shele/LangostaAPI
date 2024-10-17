@@ -13,7 +13,7 @@ namespace api.Mappers
             return new PedidoDto {
                 IdPedido = pedidoModel.IdPedido,
                 PrecioPedido = pedidoModel.PrecioPedido,
-                Detalle = pedidoModel.Detalle.Select(x => x.ToPedidoDetalleDto()).ToList(),
+                Detalle = pedidoModel.Detalle.Select(x => x.ToPedidoDetalleDto(pedidoModel.IdPedido)).ToList(),
                 IdCliente = pedidoModel.IdCliente
             };
         }

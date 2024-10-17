@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj": {}
+    "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj": {}
   },
   "projects": {
-    "Z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj": {
+    "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj",
+        "projectUniqueName": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "Z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\api.csproj",
+        "projectPath": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\api.csproj",
         "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-        "outputPath": "Z:\\Backups\\Downloads\\Langosta\\FinShark\\api\\obj\\",
+        "outputPath": "Z:\\Backups\\Downloads\\Langosta\\LangostaAPI\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "Z:\\Shared\\NuGetPackages"
